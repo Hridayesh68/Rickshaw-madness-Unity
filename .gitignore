@@ -8,6 +8,7 @@ Builds/
 
 # Project files
 *.csproj
+*.slnx
 *.sln
 *.suo
 *.sln.iml
