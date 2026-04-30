@@ -40,8 +40,6 @@ public class Tuk : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
-        rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
     }
 
     void Update()
@@ -86,9 +84,8 @@ public class Tuk : MonoBehaviour
         float speed = rb.linearVelocity.magnitude;
         float speedPercent = speed / maxSpeed;
         float curve = accelerationCurve.Evaluate(speedPercent);
-Vector3 forward = transform.forward;
-forward.y = 0f;
-forward.Normalize();
+
+        Vector3 forward = transform.forward;
 
         // 🚗 FORWARD
         if (smoothMove > 0.1f)
